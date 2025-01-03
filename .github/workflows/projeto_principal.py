@@ -1,5 +1,6 @@
 import streamlit as st #Cria o App
 import pandas as pd #manipula dados e tabelas
+import plotly.express as px
 
 df_reviews = pd.read_csv(".github/workflows/dados_projeto/customer reviews.csv")
 df_top_100_books = pd.read_csv(".github/workflows/dados_projeto/Top-100 Trending Books.csv")
@@ -9,3 +10,6 @@ price_min = df_top_100_books["book price"].min()
 max_price = st.sidebar.slider("Preços dos Livros",price_min,price_max,price_max) #siderbar https://docs.streamlit.io/develop/api-reference/widgets/st.slider
 df_books = df_top_100_books[df_top_100_books["book price"] <= max_price] # Variavel procura dentro da coluna book price o maior o igual valor. isso o pandas manipula a tapela 
 df_books
+
+gafico_1 = px.bar(df_books["years of publication"].value_counts())
+st.plotly_chart(gafico_1)
