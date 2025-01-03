@@ -11,5 +11,5 @@ max_price = st.sidebar.slider("Preços dos Livros",price_min,price_max,price_max
 df_books = df_top_100_books[df_top_100_books["book price"] <= max_price] # Variavel procura dentro da coluna book price o maior o igual valor. isso o pandas manipula a tapela 
 df_books
 
-gafico_1 = px.bar(df_books["years of publication"].value_counts()) 
+gafico_1 = px.bar(df_books["year of publication"].value_counts()) 
 st.plotly_chart(gafico_1)
