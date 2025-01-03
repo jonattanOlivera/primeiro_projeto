@@ -14,7 +14,9 @@ df_books # printando no streamlit
 gafico_1 = px.bar(df_books["year of publication"].value_counts()) # escolhi a coluna e o metodo value_counts pega quantas recorrencias vou ter na coluna
 gafico_2 = px.histogram(df_books["book price"]) 
 
+st.title("Year of Publication")
 st.plotly_chart(gafico_1)
+st.title("book price")
 st.plotly_chart(gafico_2)
 
 #caso queira plotar um grafico ao lado do outro devo criar 2 variaveis e receber o metodo do streamlit que cria colunas
