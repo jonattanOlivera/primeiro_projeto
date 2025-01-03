@@ -16,7 +16,7 @@ gafico_2 = px.histogram(df_books["book price"])
 
 st.title("Year of Publication")
 st.plotly_chart(gafico_1)
-st.title("book price")
+st.title("Book Price")
 st.plotly_chart(gafico_2)
 
 #caso queira plotar um grafico ao lado do outro devo criar 2 variaveis e receber o metodo do streamlit que cria colunas
