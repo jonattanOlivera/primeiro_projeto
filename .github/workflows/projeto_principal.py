@@ -12,7 +12,7 @@ df_books = df_top_100_books[df_top_100_books["book price"] <= max_price] # Varia
 df_books
 
 gafico_1 = px.bar(df_books["year of publication"].value_counts()) 
-gafico_2 = px.histogram(df_books["book price"].value_counts()) 
+gafico_2 = px.histogram(df_books["book price"]) 
 
 st.plotly_chart(gafico_1)
 st.plotly_chart(gafico_2)
